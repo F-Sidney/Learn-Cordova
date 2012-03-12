@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>You Are The Best</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"></meta>
+<style>
+	body {
+	   background:#ff0;
+	   }
+	div#main {
+	   background:#ccf;
+	   height:82%;
+	   width:80%;
+	   padding:10%;
+	   -webkit-border-radius:8px;
+	   }
+	</style>
+</head>
+<script src="cordova-1.5.0.js"></script>
+<script>
+document.addEventListener("deviceready",function(){
+	navigator.notification.alert("We really do think that you are the best.",function(){},"You Are The Best!");
+	document.getElementById("likeMe").
+	addEventListener("click",alertCompliment,false);
+	document.getElementById("likeHer").
+	addEventListener("click",alertCompliment,false);
+	},false);
+function alertCompliment() {
+	var elementId = this.id;
+	var greeting;
+	if(elementId == "likeMe") {
+		greeting = "you are";
+	} else if (elementId == "likeHer") {
+		greeting = "she is";
+	}
+
+	navigator.notification.alert("We really do think that "+ greeting + " the best.",function(){},"You Are The Best")
+}
+</script>
+<body>
+<div id="main">
+It works!You're really great!<br>
+<button id="likeMe">Tell me I'm great</button><br>
+<button id="likeHer">Tell her I'm great</button>
+</div>
+</body>
+</html>
