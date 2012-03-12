@@ -30,7 +30,10 @@ function alertCompliment() {
 	if(elementId == "likeMe") {
 		greeting = "you are";
 	} else if (elementId == "likeHer") {
-		greeting = "she is";
+		greeting = "model:"+device.name + "system:" +device.platform
+		  +"version:" + device.version
+		  +"id:" + device.uuid
+		  +"cordova:" + device.cordova;
 	}
 
 	navigator.notification.alert("We really do think that "+ greeting + " the best.",function(){},"You Are The Best")
